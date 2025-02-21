@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Action } from '../../utilities/types/action.type';
 import actions from '../../utilities/actions';
 
@@ -14,6 +14,8 @@ export class displayActions implements OnInit {
   sortedActionsList:Action[] = [];
   @Input() choiceLocked:boolean = false;
   @Input() typeOfGame!:string;
+
+  @Output() restartButtonClicked = new EventEmitter<void>();
 
 
   ngOnInit(): void {
@@ -51,6 +53,14 @@ export class displayActions implements OnInit {
     newActionsList.splice(newIndex,0,thisAction)
 
     this.actionsList = newActionsList;
+  }
+
+  restartGame(){
+
+    this.actionsList=[];
+    this.sortedActionsList=[];
+
+    this.restartButtonClicked.emit();
   }
 
 }

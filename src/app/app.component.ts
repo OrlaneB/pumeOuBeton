@@ -24,4 +24,10 @@ export class AppComponent {
 
     this.cdr.detectChanges();
   }
+
+  restartGame(){
+
+    this.gameMode = "";
+    this.gameStarted = false;
+  }
 }

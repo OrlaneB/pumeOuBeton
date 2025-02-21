@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { displayActions } from '../displayActions/displayActions.component';
 
 @Component ({
@@ -11,5 +11,14 @@ import { displayActions } from '../displayActions/displayActions.component';
 
 export class Game {
   choiceLocked:boolean=false;
+
   @Input() typeOfGame:string="";
+  @Output() restartButtonClicked = new EventEmitter<void>();
+
+  onRestart(){
+    this.choiceLocked=false;
+
+    this.restartButtonClicked.emit();
+  }
+
 }

@@ -10,9 +10,9 @@
   }
 
   @if(gameStarted){
-    <game [typeOfGame]="gameMode">
-
-    </game>
+    <game [typeOfGame]="gameMode"
+      (restartButtonClicked)="restartGame()"
+    ></game>
   }
 
 </div>
