@@ -1,0 +1,34 @@
+<div id="displayActions">
+
+  <div class="flexContainer">
+  @for(action of actionsList; track action.id; let index = $index){
+    <div>
+      <h5>{{index+1}}</h5>
+      <p>{{action.nom}}</p>
+
+      @if(!choiceLocked){
+        <button (click)="onChangePlacement(index,true)">←</button>
+        <button (click)="onChangePlacement(index,false)">→</button>
+      } @else {
+        <p>{{typeOfGame==="co2" ? (action?.co2 || 0)+" kg Co2": (action?.eau || 0)+" L" }}</p>
+      }
+
+    </div>
+  }
+</div>
+
+<h3>↓ Le bon ordre ↓</h3>
+
+<div class="flexContainer">
+  @if(choiceLocked){
+
+    @for(action of sortedActionsList;track action.id; let index = $index){
+      <div>
+        <h5>{{index+1}}</h5>
+        <p>{{action.nom}}</p>
+        <p>{{typeOfGame==="co2" ? (action?.co2 || 0)+" kg Co2": (action?.eau || 0)+" L" }}</p>
+      </div>
+    }
+  }
+</div>
+</div>

@@ -1,9 +1,18 @@
-<body>
+
+<div id="app">
   <h1>Bienvenue dans Poids Plume ou Béton</h1>
-  <p>Choisis ton mode de jeu</p>
 
-  <button>Mode Émissions Co2</button>
-  <button>Mode Consommation Eau Potable</button>
-</body>
+  @if(!gameStarted){
+    <p>Choisis ton mode de jeu</p>
 
-<router-outlet />
+    <button (click)="startGame('co2', $event)">Mode Émissions Co2</button>
+    <button (click)="startGame('eau', $event)">Mode Consommation Eau Potable</button>
+  }
+
+  @if(gameStarted){
+    <game [typeOfGame]="gameMode">
+
+    </game>
+  }
+
+</div>

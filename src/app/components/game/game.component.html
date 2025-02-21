@@ -1,0 +1,14 @@
+<div>
+  <!--Instruction-->
+  <h4>Classe ces actions de la plus à la moins consommatrice en {{typeOfGame}}</h4>
+
+  <!--Display the actions-->
+  <display-actions [choiceLocked]="choiceLocked" [typeOfGame]="typeOfGame"></display-actions>
+
+  <!--Button to validate-->
+  @if(!choiceLocked){
+    <button (click)="choiceLocked=true">Valider mon choix</button>
+  }
+
+
+</div>

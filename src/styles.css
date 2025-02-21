@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: rgb(50, 50, 50);
+  color:white;
+  padding: 40px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  background-color: rgb(68, 195, 151);
+  color: white;
+  border:none;
+  padding: 12px;
+  border-radius: 3px;
+  margin:8px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: aquamarine;
+  color: green;
+}
